@@ -4,10 +4,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useSidebar } from "../context/SidebarContext";
+
+import {
+  DashboardIcon,
+  SensorDataIcon,
+  LogHistoryIcon,
+  TrendGraphIcon,
+  AlarmHistoryIcon,
+  ThresholdSettingIcon,
+  VtConnectionIcon,
+  AnalyzeDataIcon,
+} from "../icons/index";
+
 import {
   ChevronDownIcon,
-  DatabaseIcon,
-  GridIcon,
   HorizontaLDots,
   PurchaseRequestIcon,
 } from "../icons/index";
@@ -44,68 +54,66 @@ const AppSidebar: React.FC = () => {
   const { isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar();
   const pathname = usePathname();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  // const { data: remindersCount } = useQuery({
-  //   queryKey: ["reminders-count"],
-  //   queryFn: ReminderService.getCount,
-  //   staleTime: 240000,
-  //   gcTime: 360000,
-  //   refetchInterval: 300000,
-  // });
-  // const { data: uncompletedKanbansCount } = useQuery({
-  //   queryKey: ["uncompleted-kanbans-count"],
-  //   queryFn: async () => {
-  //     const response = await KanbanService.getUncompletedCount();
-  //     return response.pagination.total;
-  //   },
-  //   staleTime: 240000,
-  //   gcTime: 360000,
-  //   refetchInterval: 300000,
-  // });
 
 
   const navItems: NavItem[] = [
     {
-      icon: <GridIcon />,
+      icon: <DashboardIcon className="w-5 h-5" />,
       name: "Dashboard",
       path: "/dashboard",
-      requiresAuth: false,
-      roles: ["ppc", "p3", "admin"],
-    },
-
-    {
-      icon: <PurchaseRequestIcon />,
-      name: "Request Schedule",
-      path: "/request-schedules",
-      requiresAuth: false,
-      roles: ["ppc", "admin"],
-    },
-    {
-      icon: <PurchaseRequestIcon />,
-      name: "Schedule",
-      path: "/schedules",
-      requiresAuth: false,
-      roles: ["p3", "admin"],
-    },
-    {
-      icon: <PurchaseRequestIcon />,
-      name: "Timeline Schedule",
-      path: "/timeline-schedules",
-      requiresAuth: false,
-      roles: ["p3", "admin"],
-    },
-    {
-      icon: <DatabaseIcon />,
-      name: "Master Data",
-      subItems: [
-        { name: "User", path: "/users", pro: false },
-        { name: "Machine", path: "/mc", pro: false },
-        { name: "Shift", path: "/shift", pro: false },
-        { name: "Material", path: "/materials", pro: false },
-        { name: "Product", path: "/products", pro: false },
-      ],
       requiresAuth: true,
       roles: ["admin"],
     },
+    {
+      icon: <SensorDataIcon className="w-5 h-5" />,
+      name: "Sensor Data",
+      path: "/sensor-data",
+      requiresAuth: true,
+      roles: ["admin"],
+    },
+    {
+      icon: <LogHistoryIcon className="w-5 h-5" />,
+      name: "Log History",
+      path: "/log-history",
+      requiresAuth: true,
+      roles: ["admin"],
+    },
+    {
+      icon: <TrendGraphIcon className="w-5 h-5" />,
+      name: "Trend Graph",
+      path: "/trend-graph",
+      requiresAuth: true,
+      roles: ["admin"],
+    },
+    {
+      icon: <AlarmHistoryIcon className="w-5 h-5" />,
+      name: "Alarm History",
+      path: "/alarm-history",
+      requiresAuth: true,
+      roles: ["admin"],
+    },
+    {
+      icon: <ThresholdSettingIcon className="w-5 h-5" />,
+      name: "Threshold Setting",
+      path: "/threshold-setting",
+      requiresAuth: true,
+      roles: ["admin"],
+    },
+    {
+      icon: <VtConnectionIcon className="w-5 h-5" />,
+      name: "VT Connection",
+      path: "/vt-connection",
+      requiresAuth: true,
+      roles: ["admin"],
+    },
+    {
+      icon: <AnalyzeDataIcon className="w-5 h-5" />,
+      name: "Analyze Data",
+      path: "/analyze-data",
+      requiresAuth: true,
+      roles: ["admin"],
+    },
+
   ];
   const [role, setRole] = useState<string | null>(null);
   useEffect(() => {
@@ -376,7 +384,7 @@ const AppSidebar: React.FC = () => {
                 height={40}
               />
               <h2 className="text-gray-700 uppercase font-semibold text-sm ml-2 mt-2">
-                Production Schedule System
+                Vibration Monitoring System
               </h2>
             </div>
           ) : (

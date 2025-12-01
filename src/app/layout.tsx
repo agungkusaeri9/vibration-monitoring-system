@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>Production Schedule System</title>
+        <title>Vibration Monitoring System</title>
       </head>
       <body suppressHydrationWarning className={`${outfit.variable} dark:bg-gray-900`}>
         {/* <WebSocketNotification /> */}

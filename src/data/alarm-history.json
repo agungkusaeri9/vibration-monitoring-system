@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2025-11-03 10:12:20",
+    "name": "A01",
+    "state": "Resolved",
+    "value": "3.6 m/s²",
+    "description": "Over threshold velocity resolved"
+  },
+  {
+    "id": 2,
+    "timestamp": "2025-11-03 10:18:43",
+    "name": "A02",
+    "state": "Active",
+    "value": "1.35 g",
+    "description": "Acceleration anomaly detected"
+  },
+  {
+    "id": 3,
+    "timestamp": "2025-11-03 09:50:33",
+    "name": "A03",
+    "state": "Active",
+    "value": "67.8 °C",
+    "description": "Temperature exceeded safe limit"
+  },
+  {
+    "id": 4,
+    "timestamp": "2025-11-03 08:30:12",
+    "name": "A04",
+    "state": "Resolved",
+    "value": "3.9 m/s²",
+    "description": "Vibration stabilized"
+  },
+  {
+    "id": 5,
+    "timestamp": "2025-11-03 08:00:11",
+    "name": "A05",
+    "state": "Resolved",
+    "value": "1.12 g",
+    "description": "Normal operation restored"
+  }
+]

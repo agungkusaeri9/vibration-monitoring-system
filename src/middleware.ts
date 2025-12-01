@@ -4,7 +4,6 @@ import { NextRequest, NextResponse } from "next/server";
 const publicPaths = [
   '/',
   '/auth/signin',
-  '/dashboard',
   '/stock-ins',
   '/stock-outs',
   '/purchase-requests',
@@ -14,11 +13,14 @@ const publicPaths = [
 
 // Define admin paths that require authentication
 const adminPaths = [
-  '/areas',
-  '/machines',
-  '/racks',
-  '/kanbans',
-  '/operators',
+  '/dashboard',
+  '/sensor-data',
+  '/log-history',
+  '/trend-graph',
+  '/alarm-history',
+  '/threshold-setting',
+  '/vt-connection',
+  '/analyze-data',
 ];
 
 export async function middleware(req: NextRequest) {

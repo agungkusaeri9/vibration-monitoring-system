@@ -119,3 +119,54 @@ export {
   PurchaseOrderIcon,
   PurchaseRequestIcon
 };
+
+
+// icons.tsx
+import type { SVGProps } from "react";
+import {
+  LayoutDashboard,
+  Activity,
+  History,
+  LineChart,
+  Bell,
+  Sliders,
+  Plug2,
+} from "lucide-react";
+
+export type IconProps = SVGProps<SVGSVGElement>;
+
+// optional wrapper biar konsisten size nya
+export const DashboardIcon = (props: IconProps) => (
+  <LayoutDashboard {...props} />
+);
+
+export const SensorDataIcon = (props: IconProps) => (
+  <Activity {...props} />
+);
+
+export const LogHistoryIcon = (props: IconProps) => (
+  <History {...props} />
+);
+
+export const TrendGraphIcon = (props: IconProps) => (
+  <LineChart {...props} />
+);
+
+export const AlarmHistoryIcon = (props: IconProps) => (
+  <Bell {...props} />
+);
+
+export const ThresholdSettingIcon = (props: IconProps) => (
+  <Sliders {...props} />
+);
+
+export const VtConnectionIcon = (props: IconProps) => (
+  <Plug2 {...props} />
+);
+
+
+import { BarChart3 } from "lucide-react";
+
+export const AnalyzeDataIcon = (props: IconProps) => (
+  <BarChart3 {...props} />
+);

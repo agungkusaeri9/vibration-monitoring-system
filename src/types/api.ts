@@ -6,8 +6,8 @@ export interface PaginationMeta {
 }
 
 export interface ApiResponse<T> {
-  status:string;
-  success: boolean;
+  status:boolean;
+  // success: boolean;
   message: string;
   data: T;
   pagination?: PaginationMeta;

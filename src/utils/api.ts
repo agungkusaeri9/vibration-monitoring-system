@@ -30,7 +30,7 @@ const showToast = (message: string, type: 'error' | 'success' = 'error') => {
 
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
-  timeout: 10000,
+  timeout: 999999999999,
   withCredentials: false,
   headers: {
     "Content-Type": "application/json",
@@ -78,9 +78,9 @@ api.interceptors.response.use(
 
     // Handle authentication errors (401)
     if (status === 401) {
-      // showToast(data?.message || "Authentication failed. Please login again.");
+      showToast(data?.message || "Authentication failed. Please login again.");
       // Optionally redirect to login page
-      // window.location.href = "/login";
+      window.location.href = "/";
       return Promise.reject(error);
     }
 

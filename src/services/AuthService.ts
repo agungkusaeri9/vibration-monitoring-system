@@ -4,7 +4,7 @@ const AuthService = {
   login: async (data : { username: string, password: string }) => {
     const { username, password } = data;
     try {
-      const response = await api.post("/auth/login", {
+      const response = await api.post("api/auth/login", {
         username,
         password,
       });
